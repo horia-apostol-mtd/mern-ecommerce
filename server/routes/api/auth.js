@@ -322,6 +322,8 @@ router.get(
   }
 );
 
+//new api for facebook login
+
 router.get(
   '/facebook',
   passport.authenticate('facebook', {
