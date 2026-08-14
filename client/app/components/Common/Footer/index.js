@@ -24,7 +24,7 @@ const Footer = () => {
         <Link to='/dashboard'>Account Details</Link>
       </li>
       <li className='footer-link'>
-        <Link to='/dashboard/orders'>Orders</Link>
+        <Link to='/dashboard/orders'>My Orders</Link>
       </li>
     </ul>
   );
