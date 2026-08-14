@@ -28,3 +28,4 @@ exports.subscribeToNewsletter = async email => {
 };
 //another test1
 ////////
+//test2
