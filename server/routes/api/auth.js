@@ -323,7 +323,6 @@ router.get(
 );
 
 //new api for facebook login
-//new api for facebook register
 router.get(
   '/facebook',
   passport.authenticate('facebook', {
