@@ -37,7 +37,7 @@ router.post('/', auth, async (req, res) => {
 
       res.status(200).json({
         success: true,
-        message: `Added to your Wishlist successfully!`,
+        message: `Added to your Wishlist successfully`,
         wishlist: wishlistDoc
       });
     }
