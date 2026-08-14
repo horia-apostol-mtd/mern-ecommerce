@@ -79,6 +79,7 @@ router.post('/login', async (req, res) => {
     });
   }
 });
+//new method
 
 router.post('/register', async (req, res) => {
   try {
