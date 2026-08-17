@@ -12,14 +12,14 @@
         {
             // dev frontend host (branch: dev)
             match: 'frontend-route-demo-app-dev',
-            api: 'https://backend-route-demo-app-dev.apps.okd-test.home.lab/api',
-            socket: 'https://backend-route-demo-app-dev.apps.okd-test.home.lab'
+            api: 'http://backend-route-demo-app-dev.apps.okd-test.home.lab/api',
+            socket: 'http://backend-route-demo-app-dev.apps.okd-test.home.lab'
         },
         {
             // prod frontend host (branch: main)
             match: 'frontend-route-demo-app',
-            api: 'https://backend-route-demo-app.apps.okd-test.home.lab/api',
-            socket: 'https://backend-route-demo-app.apps.okd-test.home.lab'
+            api: 'http://backend-route-demo-app.apps.okd-test.home.lab/api',
+            socket: 'http://backend-route-demo-app.apps.okd-test.home.lab'
         }
     ];
 
