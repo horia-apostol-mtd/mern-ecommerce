@@ -4,11 +4,38 @@
 (function (window) {
     window.__ENV = window.__ENV || {};
 
-    window.__ENV.API_URL = window.__ENV.API_URL || 'http://localhost:3000/api';
+    // Automatic mapping from frontend host -> backend endpoints.
+    // This lets the SPA pick the correct backend without rebuilding.
+    const host = (window.location && window.location.host) || '';
 
-    window.__ENV.SOCKET_URL =
-        window.__ENV.SOCKET_URL ||
-        (window.location.host.indexOf('localhost') >= 0
-            ? 'http://127.0.0.1:3000'
-            : window.location.host);
+    const MAPPINGS = [
+        {
+            // dev frontend host (branch: dev)
+            match: 'frontend-route-demo-app-dev',
+            api: 'https://backend-route-demo-app-dev.apps.okd-test.home.lab/api',
+            socket: 'https://backend-route-demo-app-dev.apps.okd-test.home.lab'
+        },
+        {
+            // prod frontend host (branch: main)
+            match: 'frontend-route-demo-app',
+            api: 'https://backend-route-demo-app.apps.okd-test.home.lab/api',
+            socket: 'https://backend-route-demo-app.apps.okd-test.home.lab'
+        }
+    ];
+
+    const found = MAPPINGS.find(m => host.indexOf(m.match) >= 0);
+
+    // allow an explicit override (e.g., mounted ConfigMap) via window.__ENV
+    if (!window.__ENV.API_URL) {
+        window.__ENV.API_URL = found ? found.api : 'http://localhost:3000/api';
+    }
+
+    if (!window.__ENV.SOCKET_URL) {
+        window.__ENV.SOCKET_URL =
+            found
+                ? found.socket
+                : host.indexOf('localhost') >= 0
+                    ? 'http://127.0.0.1:3000'
+                    : window.location.host;
+    }
 })(this);
