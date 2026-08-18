@@ -40,6 +40,7 @@ if (token) {
   // authenticate routes
   store.dispatch({ type: SET_AUTH });
 }
+//
 
 const app = () => (
   <Provider store={store}>
