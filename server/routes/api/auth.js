@@ -79,7 +79,7 @@ router.post('/login', async (req, res) => {
     });
   }
 });
-//new method changed
+//new method changed for test
 
 router.post('/register', async (req, res) => {
   try {
