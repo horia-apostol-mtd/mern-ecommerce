@@ -82,8 +82,8 @@ class Navigation extends React.PureComponent {
           <img
             className='item-image'
             src={`${suggestion.imageUrl
-                ? suggestion.imageUrl
-                : '/images/placeholder-image.png'
+              ? suggestion.imageUrl
+              : '/images/placeholder-image.png'
               }`}
           />
           <div>
@@ -179,7 +179,7 @@ class Navigation extends React.PureComponent {
                   />
                 )}
                 <Link to='/'>
-                  <h1 className='logo'>MTD Store</h1>
+                  <h1 className='logo'>MTD Technology Store</h1>
                 </Link>
               </div>
             </Col>
